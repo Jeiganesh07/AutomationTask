@@ -18,11 +18,12 @@ class HelloWorldTest extends BaseTest {
   void navigateToURL() {
     signUpPage = new SignUpPage(driver);
     receiptPage = new ReceiptPage(driver);
-    open("https://www.kimschiller.com/page-object-pattern-tutorial/index.html");
+    open("http://www.kimschiller.com/page-object-pattern-tutorial/index.html");
   }
 
   @Test
-  void helloWorldTest() {
+  void helloWorldTest() throws InterruptedException {
+	  Thread.sleep(5000);
     assertTrue(signUpPage.isInitialized());
 
     signUpPage.enterName("First", "Last");

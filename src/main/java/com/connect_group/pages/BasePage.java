@@ -59,6 +59,10 @@ public class BasePage {
     wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(locator, text)));
   }
 
+  protected void waitForTextToAppear(By locator, String text) {
+	    wait.until(ExpectedConditions.textToBe(locator, text));
+	  }
+
   protected Actions actions() {
     return new Actions(getDriver());
   }
